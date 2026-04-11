@@ -1,4 +1,4 @@
-require('dotenv').config(); // sabse upar
+require('dotenv').config(); 
 
 const express = require('express');
 const app = express();
@@ -8,7 +8,7 @@ const cors = require('cors');
 require('./Models/db'); 
 
 const AuthRouter = require('./Routes/AuthRouter');
-
+const ProductRouter = require('./Routes/ProductRouter');
 const PORT = process.env.PORT || 8080;
 
 app.get('/ping', (req, res) => {
@@ -18,7 +18,7 @@ app.get('/ping', (req, res) => {
 app.use(bodyParser.json());
 app.use(cors());
 app.use('/auth', AuthRouter);
-app.use('/products',AuthRouter);
+app.use('/products',ProductRouter);
 
 app.listen(PORT, () => {
    console.log(`server is running on ${PORT}`);
