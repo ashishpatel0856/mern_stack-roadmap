@@ -1,18 +1,19 @@
 const jwt = require('jsonwebtoken');
-const ensureAuthenticated  = (req,res,next) => {
+const ensureAuthenticated = (req, res, next) => {
     const auth = req.headers['authorization'];
-    if(!auth) {
+    if (!auth) {
         return res.status(403)
-        .json({message: 'Unauthorized ,jwt token is requied'})
+            .json({ message: 'Unauthorized ,jwt token is requied' })
     }
     try {
-        const decoded=jwt.verify(auth,process.env.JWT_SECRET);
+        const decoded = jwt.verify(auth, process.env.JWT_SECRET);
         req.user = decoded;
         next();
-    } catch(err){
+    } catch (err) {
         return res.status(403)
-        .json({message: "unauthorized, jwt token wrong or expired"})
+            .json({ message: "unauthorized, jwt token wrong or expired" })
     }
 }
 
 module.exports = ensureAuthenticated;
+//   for token
