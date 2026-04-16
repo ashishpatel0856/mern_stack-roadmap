@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Navbar = () => {
+  <h1>this is navbar,in which every information overview</h1>
   return (
     <div className='w-full flex justify-between h-20 items-center bg-gray-500 shadow px-5'>
        <div className='w-[10%] h-full flex items-center'>

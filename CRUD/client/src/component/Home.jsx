@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { FaPen } from "react-icons/fa"
 import { MdDelete } from "react-icons/md"
 
-
+// home section
 const Home = () => {
 
     const [bookForm, setBookForm] = useState({
