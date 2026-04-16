@@ -7,7 +7,7 @@ import { MdDelete } from "react-icons/md"
 
 // home section
 const Home = () => {
-
+<h1>this is home section , in which every details explained gernally</h1>
     const [bookForm, setBookForm] = useState({
         BookName: "",
         BookTitle: "",
